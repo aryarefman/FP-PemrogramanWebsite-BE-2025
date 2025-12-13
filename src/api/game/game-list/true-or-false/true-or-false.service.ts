@@ -249,7 +249,6 @@ export abstract class TrueOrFalseService {
     const questions = (gameJson.questions ?? []).map((q, index) => ({
       questionIndex: index,
       questionText: q.questionText,
-      correctAnswer: q.correctAnswer, // Include correct answer for client-side validation
     }));
 
     return {
@@ -313,7 +312,7 @@ export abstract class TrueOrFalseService {
 
     // Calculate score (assuming 100 is max score)
     const maxScore = 100;
-    const score = (correctCount / gameJson.questions.length) * maxScore;
+    const score = (correctCount / data.answers.length) * maxScore;
 
     return {
       game_id,
