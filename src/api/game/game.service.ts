@@ -177,7 +177,7 @@ export abstract class GameService {
 
     return await prisma.games.update({
       where: { id: data.game_id },
-      data: { is_published: data.is_publish },
+      data: { is_published: data.is_published },
       select: { is_published: true },
     });
   }
